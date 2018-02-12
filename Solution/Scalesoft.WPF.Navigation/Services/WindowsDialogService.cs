@@ -22,7 +22,7 @@ namespace Scalesoft.WPF.Navigation.Services
             get
             {
                 var windows = Application.Current.Windows;
-                var window = windows.OfType<Window>().SingleOrDefault(x => x.IsActive) ??
+                var window = windows.OfType<Window>().FirstOrDefault(x => x.IsActive) ??
                              windows.OfType<TMainWindow>().SingleOrDefault();
                 return window;
             }
